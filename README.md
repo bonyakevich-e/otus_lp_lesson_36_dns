@@ -17,3 +17,27 @@
 - клиент1 видит обе зоны, но в зоне dns.lab только web1
 - клиент2 видит только dns.lab
 
+#### ОПИСАНИЕ ВЫПОЛНЕНИЯ
+После развёртывания стенда из Vagrantfile будут сделаны все необходимые настройки для успешного выполнения заданий (с помощью Ansible).
+
+Проверка на client:
+```
+[root@client ~]# ping www.newdns.lab
+[root@client ~]# ping web1.dns.lab
+[root@client ~]# ping web2.dns.lab
+```
+![homework dns 1](https://github.com/user-attachments/assets/2bbce893-8f8e-438d-95ed-c9454e6dc71c)
+
+Видим, что client видит обе зоны (dns.lab и newdns.lab), однако информацию о хосте web2.dns.lab он получить не может. 
+
+Проверка на client2: 
+
+[root@client2 ~]# ping www.newdns.lab
+[root@client2 ~]# ping web1.dns.lab
+[root@client2 ~]# ping web2.dns.lab
+
+![homework dns 2](https://github.com/user-attachments/assets/0a57a69b-da78-459c-a785-d0cfca1016a1)
+
+Видим, что client2 видит всю зону dns.lab и не видит зону newdns.lab
+
+
